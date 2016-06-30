@@ -15,7 +15,7 @@ then open a pull request. :zap:
 
 #### Whitespace
 
- * Tabs, not spaces.
+ * 4 spaces, not tabs.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Don’t leave trailing whitespace.
@@ -93,7 +93,7 @@ So, write these:
 
 ```swift
 var myGreatProperty: Int {
-	return 4
+    return 4
 }
 
 subscript(index: Int) -> T {
@@ -105,9 +105,9 @@ subscript(index: Int) -> T {
 
 ```swift
 var myGreatProperty: Int {
-	get {
-		return 4
-	}
+    get {
+        return 4
+    }
 }
 
 subscript(index: Int) -> T {
@@ -133,7 +133,7 @@ However, definitions within those can leave access control implicit, where appro
 
 ```swift
 internal struct TheFez {
-	var owner: Person = Joshaber()
+    var owner: Person = Joshaber()
 }
 ```
 
@@ -168,11 +168,11 @@ When accessing properties or methods on `self`, leave the reference to `self` im
 
 ```swift
 private class History {
-	var events: [Event]
+    var events: [Event]
 
-	func rewrite() {
-		events = []
-	}
+    func rewrite() {
+        events = []
+    }
 }
 ```
 
@@ -180,15 +180,15 @@ Only include the explicit keyword when required by the language—for example, i
 
 ```swift
 extension History {
-	init(events: [Event]) {
-		self.events = events
-	}
+    init(events: [Event]) {
+        self.events = events
+    }
 
-	var whenVictorious: () -> () {
-		return {
-			self.rewrite()
-		}
-	}
+    var whenVictorious: () -> () {
+        return {
+            self.rewrite()
+        }
+    }
 }
 ```
 
@@ -263,10 +263,10 @@ Methods of parameterized types can omit type parameters on the receiving type wh
 
 ```swift
 struct Composite<T> {
-	…
-	func compose(other: Composite<T>) -> Composite<T> {
-		return Composite<T>(self, other)
-	}
+    …
+    func compose(other: Composite<T>) -> Composite<T> {
+        return Composite<T>(self, other)
+    }
 }
 ```
 
@@ -274,10 +274,10 @@ could be rendered as:
 
 ```swift
 struct Composite<T> {
-	…
-	func compose(other: Composite) -> Composite {
-		return Composite(self, other)
-	}
+    …
+    func compose(other: Composite) -> Composite {
+        return Composite(self, other)
+    }
 }
 ```
 
